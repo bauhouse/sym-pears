@@ -18,12 +18,12 @@
 		);
 
 		public $dsParamINCLUDEDELEMENTS = array(
-				'title: formatted',
+				'title',
 				'category',
 				'date',
 				'publish',
-				'html: unformatted',
-				'css: unformatted'
+				'html',
+				'css'
 		);
 
 
@@ -40,7 +40,7 @@
 					'website' => 'http://home/sym/pears',
 					'email' => 'stephen@domain7.com'),
 				'version' => 'Symphony 2.2.5',
-				'release-date' => '2012-04-20T18:37:27+00:00'
+				'release-date' => '2012-04-20T18:54:44+00:00'
 			);
 		}
 
