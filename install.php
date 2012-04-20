@@ -200,7 +200,7 @@
 		$conf['region']['date_format'] = 'd F Y';
 		$conf['region']['datetime_separator'] = ' ';
 		$conf['maintenance_mode']['enabled'] = 'no';
-		$conf['dump_db']['last_sync'] = '2012-04-20T10:51:42-07:00';
+		$conf['dump_db']['last_sync'] = '2012-04-20T11:14:01-07:00';
 
 		return $conf;
 
