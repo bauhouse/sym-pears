@@ -8,7 +8,7 @@
 	<style id="s" type="text/css"><xsl:value-of select="welcome-pattern/entry/css" /></style>
 	<div id="pattern" class="mod group">
 		<h3 class="label">Welcome</h3> 
-		<div id="pattern-wrap" class="group"><xsl:copy-of select="welcome-pattern/entry/html/text()" /></div>
+		<div id="pattern-wrap" class="group"><xsl:copy-of select="welcome-pattern/entry/html/*" /></div>
 	</div>
 	<div class="group">
 		<div id="markup" class="mod">
