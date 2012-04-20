@@ -25,13 +25,14 @@ CREATE TABLE `sym_entries` (
   KEY `author_id` (`author_id`),
   KEY `creation_date` (`creation_date`),
   KEY `creation_date_gmt` (`creation_date_gmt`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_entries` ***
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (1, 1, 1, '2012-04-20 10:34:38', '2012-04-20 17:34:38');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (2, 1, 1, '2012-04-20 10:34:44', '2012-04-20 17:34:44');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (3, 1, 1, '2012-04-20 10:34:51', '2012-04-20 17:34:51');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (4, 1, 1, '2012-04-20 10:35:00', '2012-04-20 17:35:00');
+INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (5, 2, 1, '2012-04-20 11:17:38', '2012-04-20 18:17:38');
 
 -- *** STRUCTURE: `sym_entries_data_1` ***
 DROP TABLE IF EXISTS `sym_entries_data_1`;
@@ -82,9 +83,10 @@ CREATE TABLE `sym_entries_data_3` (
   KEY `entry_id` (`entry_id`),
   FULLTEXT KEY `value` (`value`),
   FULLTEXT KEY `value_formatted` (`value_formatted`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_entries_data_3` ***
+INSERT INTO `sym_entries_data_3` (`id`, `entry_id`, `handle`, `value`, `value_formatted`, `word_count`) VALUES (2, 5, 'welcome', 'Welcome', 'Welcome', 1);
 
 -- *** STRUCTURE: `sym_entries_data_4` ***
 DROP TABLE IF EXISTS `sym_entries_data_4`;
@@ -95,9 +97,10 @@ CREATE TABLE `sym_entries_data_4` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_4` ***
+INSERT INTO `sym_entries_data_4` (`id`, `entry_id`, `relation_id`) VALUES (2, 5, NULL);
 
 -- *** STRUCTURE: `sym_entries_data_5` ***
 DROP TABLE IF EXISTS `sym_entries_data_5`;
@@ -110,9 +113,10 @@ CREATE TABLE `sym_entries_data_5` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_entries_data_5` ***
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (2, 5, '2012-04-20T11:16:00-07:00', 1334945760, 1334945760);
 
 -- *** STRUCTURE: `sym_entries_data_6` ***
 DROP TABLE IF EXISTS `sym_entries_data_6`;
@@ -123,9 +127,10 @@ CREATE TABLE `sym_entries_data_6` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_entries_data_6` ***
+INSERT INTO `sym_entries_data_6` (`id`, `entry_id`, `value`) VALUES (2, 5, 'no');
 
 -- *** STRUCTURE: `sym_entries_data_7` ***
 DROP TABLE IF EXISTS `sym_entries_data_7`;
@@ -140,9 +145,10 @@ CREATE TABLE `sym_entries_data_7` (
   KEY `entry_id` (`entry_id`),
   FULLTEXT KEY `value` (`value`),
   FULLTEXT KEY `value_formatted` (`value_formatted`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_entries_data_7` ***
+INSERT INTO `sym_entries_data_7` (`id`, `entry_id`, `handle`, `value`, `value_formatted`, `word_count`) VALUES (2, 5, 'collect-test-and-experiment-with-interface-pattern-pairings-of-css-and-html-pears-is-an-open-source-wordpress-theme-enabling-people-like-you-to-get-your-own-pattern-library-up-and-running-quickly-grab-the-theme-at-github-install-the-theme-crea', '<p class=\"welcome\">\r\nCollect, test, and experiment with <strong>interface pattern pairings</strong> of <abbr>CSS</abbr> & <abbr>HTML</abbr>. <strong>Pears</strong> is an <a href=\"https://github.com/simplebits/Pears\">open source WordPress theme</a>, enabling people like you to get your own pattern library up and running quickly.\r\n</p>\r\n<ol class=\"steps\">\r\n	<li><a href=\"https://github.com/simplebits/Pears\">Grab the theme at Github</a>.</li>\r\n	<li>Install the theme.</li>\r\n	<li>Create markup & style patterns.</li>\r\n	<li>Learn.\r\n</ol>', '&lt;p class=&quot;welcome&quot;&gt;\r\nCollect, test, and experiment with &lt;strong&gt;interface pattern pairings&lt;/strong&gt; of &lt;abbr&gt;CSS&lt;/abbr&gt; &amp; &lt;abbr&gt;HTML&lt;/abbr&gt;. &lt;strong&gt;Pears&lt;/strong&gt; is an &lt;a href=&quot;https://github.com/simplebits/Pears&quot;&gt;open source WordPress theme&lt;/a&gt;, enabling people like you to get your own pattern library up and running quickly.\r\n&lt;/p&gt;\r\n&lt;ol class=&quot;steps&quot;&gt;\r\n	&lt;li&gt;&lt;a href=&quot;https://github.com/simplebits/Pears&quot;&gt;Grab the theme at Github&lt;/a&gt;.&lt;/li&gt;\r\n	&lt;li&gt;Install the theme.&lt;/li&gt;\r\n	&lt;li&gt;Create markup &amp; style patterns.&lt;/li&gt;\r\n	&lt;li&gt;Learn.\r\n&lt;/ol&gt;', 45);
 
 -- *** STRUCTURE: `sym_entries_data_8` ***
 DROP TABLE IF EXISTS `sym_entries_data_8`;
@@ -157,9 +163,10 @@ CREATE TABLE `sym_entries_data_8` (
   KEY `entry_id` (`entry_id`),
   FULLTEXT KEY `value` (`value`),
   FULLTEXT KEY `value_formatted` (`value_formatted`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_entries_data_8` ***
+INSERT INTO `sym_entries_data_8` (`id`, `entry_id`, `handle`, `value`, `value_formatted`, `word_count`) VALUES (2, 5, 'pwelcome-olsteps-{-font-size-16em-line-height-14-}-pwelcome-{-margin-0-0-14em-}-pwelcome-abbr-{-letter-spacing-3px-}-olsteps-li-{-list-style-decimal-margin-left-14em-}', 'p.welcome,\r\nol.steps {\r\n	font-size: 1.6em;\r\n	line-height: 1.4;\r\n	}\r\np.welcome {\r\n	margin: 0 0 1.4em;\r\n	}\r\np.welcome abbr {\r\n	letter-spacing: 3px;\r\n	}\r\nol.steps li {\r\n	list-style: decimal;\r\n	margin-left: 1.4em;\r\n	}', 'p.welcome,\r\nol.steps {\r\n	font-size: 1.6em;\r\n	line-height: 1.4;\r\n	}\r\np.welcome {\r\n	margin: 0 0 1.4em;\r\n	}\r\np.welcome abbr {\r\n	letter-spacing: 3px;\r\n	}\r\nol.steps li {\r\n	list-style: decimal;\r\n	margin-left: 1.4em;\r\n	}', 18);
 
 -- *** STRUCTURE: `sym_entries_data_9` ***
 DROP TABLE IF EXISTS `sym_entries_data_9`;
@@ -172,9 +179,10 @@ CREATE TABLE `sym_entries_data_9` (
   KEY `entry_id` (`entry_id`),
   KEY `value` (`value`),
   KEY `order` (`order`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_entries_data_9` ***
+INSERT INTO `sym_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (2, 5, 'yes', 1334946006);
 
 -- *** STRUCTURE: `sym_extensions` ***
 DROP TABLE IF EXISTS `sym_extensions`;
@@ -263,7 +271,7 @@ CREATE TABLE `sym_fields` (
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (1, 'Category', 'category', 'input', 1, 'yes', 0, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (2, 'Sort', 'sort', 'order_entries', 1, 'no', 1, 'sidebar', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (3, 'Title', 'title', 'textbox', 2, 'yes', 0, 'sidebar', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (4, 'Category', 'category', 'selectbox_link', 2, 'yes', 1, 'sidebar', 'no');
+INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (4, 'Category', 'category', 'selectbox_link', 2, 'no', 1, 'sidebar', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (5, 'Date', 'date', 'date', 2, 'no', 2, 'sidebar', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (6, 'Publish', 'publish', 'checkbox', 2, 'no', 3, 'sidebar', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (7, 'HTML', 'html', 'textbox', 2, 'no', 4, 'main', 'no');
@@ -293,10 +301,10 @@ CREATE TABLE `sym_fields_checkbox` (
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields_checkbox` ***
-INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (3, 6, 'off', NULL);
+INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (4, 6, 'off', NULL);
 
 -- *** STRUCTURE: `sym_fields_date` ***
 DROP TABLE IF EXISTS `sym_fields_date`;
@@ -306,10 +314,10 @@ CREATE TABLE `sym_fields_date` (
   `pre_populate` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields_date` ***
-INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (3, 5, 'yes');
+INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (4, 5, 'yes');
 
 -- *** STRUCTURE: `sym_fields_input` ***
 DROP TABLE IF EXISTS `sym_fields_input`;
@@ -365,10 +373,10 @@ CREATE TABLE `sym_fields_selectbox_link` (
   `limit` int(4) unsigned NOT NULL DEFAULT '20',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_selectbox_link` ***
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `show_association`, `related_field_id`, `limit`) VALUES (3, 4, 'no', 'yes', 1, 20);
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `show_association`, `related_field_id`, `limit`) VALUES (4, 4, 'no', 'yes', 1, 20);
 
 -- *** STRUCTURE: `sym_fields_taglist` ***
 DROP TABLE IF EXISTS `sym_fields_taglist`;
@@ -411,12 +419,12 @@ CREATE TABLE `sym_fields_textbox` (
   `text_handle` enum('yes','no') DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields_textbox` ***
-INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (7, 3, 75, 'single', 'none', NULL, 0, 'no', 'yes');
-INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (8, 7, 75, 'medium', 'none', NULL, 0, 'no', 'no');
-INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (9, 8, 75, 'medium', 'none', NULL, 0, 'no', 'no');
+INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (10, 3, 75, 'single', 'none', NULL, 0, 'no', 'yes');
+INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (11, 7, 75, 'medium', 'none', NULL, 0, 'no', 'no');
+INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (12, 8, 75, 'medium', 'none', NULL, 0, 'no', 'no');
 
 -- *** STRUCTURE: `sym_fields_uniquecheckbox` ***
 DROP TABLE IF EXISTS `sym_fields_uniquecheckbox`;
@@ -429,10 +437,10 @@ CREATE TABLE `sym_fields_uniquecheckbox` (
   `unique_steal` enum('on','off') NOT NULL DEFAULT 'on',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields_uniquecheckbox` ***
-INSERT INTO `sym_fields_uniquecheckbox` (`id`, `field_id`, `default_state`, `description`, `unique_entries`, `unique_steal`) VALUES (2, 9, 'off', 'Welcome (display on home page)', 1, 'on');
+INSERT INTO `sym_fields_uniquecheckbox` (`id`, `field_id`, `default_state`, `description`, `unique_entries`, `unique_steal`) VALUES (3, 9, 'off', 'Welcome (display on home page)', 1, 'on');
 
 -- *** STRUCTURE: `sym_fields_upload` ***
 DROP TABLE IF EXISTS `sym_fields_upload`;
@@ -509,7 +517,7 @@ CREATE TABLE `sym_sections_association` (
   `hide_association` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `parent_section_id` (`parent_section_id`,`child_section_id`,`child_section_field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_sections_association` ***
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (3, 1, 1, 2, 4, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (4, 1, 1, 2, 4, 'no');
