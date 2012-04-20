@@ -387,10 +387,10 @@ INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (9, 'Welcome', 'welcome', 'uniquecheckbox', 2, 'no', 6, 'sidebar', 'yes');
 
 -- *** DATA: `tbl_pages` ***
-INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (1, NULL, 'Home', 'home', NULL, NULL, NULL, NULL, 1);
+INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (1, NULL, 'Home', 'home', NULL, NULL, 'welcome_pattern', NULL, 1);
 
 -- *** DATA: `tbl_pages_types` ***
-INSERT INTO `tbl_pages_types` (`id`, `page_id`, `type`) VALUES (1, 1, 'index');
+INSERT INTO `tbl_pages_types` (`id`, `page_id`, `type`) VALUES (2, 1, 'index');
 
 -- *** DATA: `tbl_sections` ***
 INSERT INTO `tbl_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (1, 'Categories', 'categories', 2, 2, 'asc', 'no', 'Content');
