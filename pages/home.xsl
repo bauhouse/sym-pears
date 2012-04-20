@@ -5,29 +5,29 @@
 <xsl:import href="../utilities/master.xsl"/>
 
 <xsl:template match="data">
-	<style id="s" type="text/css">
-p.welcome,
-ol.steps {
-	font-size: 1.6em;
-	line-height: 1.4;
-	}
-p.welcome {
-	margin: 0 0 1.4em;
-	}
-p.welcome abbr {
-	letter-spacing: 3px;
-	}
-ol.steps li {
-	list-style: decimal;
-	margin-left: 1.4em;
-	}
-</style>
+	<style id="s" type="text/css"><xsl:value-of select="welcome-pattern/entry/css" /></style>
 	<div id="pattern" class="mod group">
+		<h3 class="label">Welcome</h3> 
+		<div id="pattern-wrap" class="group"><xsl:copy-of select="welcome-pattern/entry/html/text()" /></div>
 	</div>
 	<div class="group">
 		<div id="markup" class="mod">
+			<h3 class="label">HTML</h3>
+			<a href="#" class="clip" title="select code for copying">
+				<img src="{$workspace}/assets/images/icon-copy.png" alt="copy" />
+			</a>
+			<textarea class="mod-ta">
+				<xsl:value-of select="welcome-pattern/entry/html" />
+			</textarea>
 		</div>
 		<div id="style" class="mod">
+			<h3 class="label">CSS</h3>
+			<a href="#" class="clip" title="select code for copying">
+				<img src="{$workspace}/assets/images/icon-copy.png" alt="copy" />
+			</a>
+			<textarea class="mod-ta">
+				<xsl:value-of select="welcome-pattern/entry/css" />
+			</textarea>
 		</div>
 	</div>
 </xsl:template>
