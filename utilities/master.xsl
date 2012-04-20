@@ -16,7 +16,7 @@
 		</head>
 		<body class="home page page-id-2 page-template page-template-default">
 			<header role="banner" class="group">
-				<a href="index.html" id="logo">
+				<a href="{$root}/" id="logo">
 					Pears <em>are common patterns of markup &amp; style</em>
 				</a>
 			</header>
