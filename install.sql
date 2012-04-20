@@ -147,9 +147,13 @@ CREATE TABLE `tbl_entries_data_1` (
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `handle` (`handle`),
   KEY `value` (`value`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_1` ***
+INSERT INTO `tbl_entries_data_1` (`id`, `entry_id`, `handle`, `value`) VALUES (1, 1, 'content', 'Content');
+INSERT INTO `tbl_entries_data_1` (`id`, `entry_id`, `handle`, `value`) VALUES (2, 2, 'forms', 'Forms');
+INSERT INTO `tbl_entries_data_1` (`id`, `entry_id`, `handle`, `value`) VALUES (3, 3, 'lists', 'Lists');
+INSERT INTO `tbl_entries_data_1` (`id`, `entry_id`, `handle`, `value`) VALUES (4, 4, 'navigation', 'Navigation');
 
 -- *** STRUCTURE: `tbl_entries_data_2` ***
 DROP TABLE IF EXISTS `tbl_entries_data_2`;
@@ -160,11 +164,19 @@ CREATE TABLE `tbl_entries_data_2` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_2` ***
+INSERT INTO `tbl_entries_data_2` (`id`, `entry_id`, `value`) VALUES (1, 1, 1);
+INSERT INTO `tbl_entries_data_2` (`id`, `entry_id`, `value`) VALUES (2, 2, 2);
+INSERT INTO `tbl_entries_data_2` (`id`, `entry_id`, `value`) VALUES (3, 3, 3);
+INSERT INTO `tbl_entries_data_2` (`id`, `entry_id`, `value`) VALUES (4, 4, 4);
 
 -- *** DATA: `tbl_entries` ***
+INSERT INTO `tbl_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (1, 1, 1, '2012-04-20 10:34:38', '2012-04-20 17:34:38');
+INSERT INTO `tbl_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (2, 1, 1, '2012-04-20 10:34:44', '2012-04-20 17:34:44');
+INSERT INTO `tbl_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (3, 1, 1, '2012-04-20 10:34:51', '2012-04-20 17:34:51');
+INSERT INTO `tbl_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (4, 1, 1, '2012-04-20 10:35:00', '2012-04-20 17:35:00');
 
 -- *** DATA: `tbl_extensions` ***
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (1, 'xssfilter', 'enabled', 1.1);
