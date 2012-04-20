@@ -46,10 +46,24 @@ CREATE TABLE `tbl_fields_input` (
   `validator` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_input` ***
-INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (1, 1, NULL);
+INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (4, 1, NULL);
+
+-- *** STRUCTURE: `tbl_fields_order_entries` ***
+DROP TABLE IF EXISTS `tbl_fields_order_entries`;
+CREATE TABLE `tbl_fields_order_entries` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `field_id` int(11) unsigned NOT NULL,
+  `force_sort` enum('yes','no') DEFAULT 'no',
+  `hide` enum('yes','no') DEFAULT 'no',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `field_id` (`field_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- *** DATA: `tbl_fields_order_entries` ***
+INSERT INTO `tbl_fields_order_entries` (`id`, `field_id`, `force_sort`, `hide`) VALUES (3, 2, NULL, 'no');
 
 -- *** STRUCTURE: `tbl_fields_select` ***
 DROP TABLE IF EXISTS `tbl_fields_select`;
@@ -137,6 +151,19 @@ CREATE TABLE `tbl_entries_data_1` (
 
 -- *** DATA: `tbl_entries_data_1` ***
 
+-- *** STRUCTURE: `tbl_entries_data_2` ***
+DROP TABLE IF EXISTS `tbl_entries_data_2`;
+CREATE TABLE `tbl_entries_data_2` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) unsigned NOT NULL,
+  `value` double DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `entry_id` (`entry_id`),
+  KEY `value` (`value`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- *** DATA: `tbl_entries_data_2` ***
+
 -- *** DATA: `tbl_entries` ***
 
 -- *** DATA: `tbl_extensions` ***
@@ -151,6 +178,7 @@ INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (8, 'pro
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (9, 'markdown', 'enabled', 1.13);
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (10, 'edui', 'enabled', '0.6.1');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (11, 'html5_doctype', 'enabled', '1.2.5');
+INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (12, 'order_entries', 'enabled', '1.9.8');
 
 -- *** DATA: `tbl_extensions_delegates` ***
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (1, 1, '/blueprints/events/new/', 'AppendEventFilter', 'appendEventFilter');
@@ -176,9 +204,11 @@ INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (21, 10, '/backend/', 'NavigationPreRender', 'deleteComponentsItem');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (22, 10, '/backend/', 'AdminPagePreGenerate', 'setRedirects');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (23, 11, '/frontend/', 'FrontendOutputPostGenerate', 'parse_html');
+INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (24, 12, '/backend/', 'InitaliseAdminPageHead', 'appendScriptToHead');
 
 -- *** DATA: `tbl_fields` ***
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (1, 'Category', 'category', 'input', 1, 'yes', 0, 'main', 'yes');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (2, 'Sort', 'sort', 'order_entries', 1, 'no', 1, 'sidebar', 'yes');
 
 -- *** DATA: `tbl_pages` ***
 INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (1, NULL, 'Home', 'home', NULL, NULL, NULL, NULL, 1);
@@ -187,6 +217,6 @@ INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `d
 INSERT INTO `tbl_pages_types` (`id`, `page_id`, `type`) VALUES (1, 1, 'index');
 
 -- *** DATA: `tbl_sections` ***
-INSERT INTO `tbl_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (1, 'Categories', 'categories', 1, NULL, 'asc', 'no', 'Content');
+INSERT INTO `tbl_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (1, 'Categories', 'categories', 1, 2, 'asc', 'no', 'Content');
 
 -- *** DATA: `tbl_sections_association` ***

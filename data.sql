@@ -44,6 +44,19 @@ CREATE TABLE `sym_entries_data_1` (
 
 -- *** DATA: `sym_entries_data_1` ***
 
+-- *** STRUCTURE: `sym_entries_data_2` ***
+DROP TABLE IF EXISTS `sym_entries_data_2`;
+CREATE TABLE `sym_entries_data_2` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) unsigned NOT NULL,
+  `value` double DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `entry_id` (`entry_id`),
+  KEY `value` (`value`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- *** DATA: `sym_entries_data_2` ***
+
 -- *** STRUCTURE: `sym_extensions` ***
 DROP TABLE IF EXISTS `sym_extensions`;
 CREATE TABLE `sym_extensions` (
@@ -53,7 +66,7 @@ CREATE TABLE `sym_extensions` (
   `version` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_extensions` ***
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (1, 'xssfilter', 'enabled', 1.1);
@@ -67,6 +80,7 @@ INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (8, 'pro
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (9, 'markdown', 'enabled', 1.13);
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (10, 'edui', 'enabled', '0.6.1');
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (11, 'html5_doctype', 'enabled', '1.2.5');
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (12, 'order_entries', 'enabled', '1.9.8');
 
 -- *** STRUCTURE: `sym_extensions_delegates` ***
 DROP TABLE IF EXISTS `sym_extensions_delegates`;
@@ -80,7 +94,7 @@ CREATE TABLE `sym_extensions_delegates` (
   KEY `extension_id` (`extension_id`),
   KEY `page` (`page`),
   KEY `delegate` (`delegate`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_extensions_delegates` ***
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (1, 1, '/blueprints/events/new/', 'AppendEventFilter', 'appendEventFilter');
@@ -106,6 +120,7 @@ INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (21, 10, '/backend/', 'NavigationPreRender', 'deleteComponentsItem');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (22, 10, '/backend/', 'AdminPagePreGenerate', 'setRedirects');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (23, 11, '/frontend/', 'FrontendOutputPostGenerate', 'parse_html');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (24, 12, '/backend/', 'InitaliseAdminPageHead', 'appendScriptToHead');
 
 -- *** STRUCTURE: `sym_fields` ***
 DROP TABLE IF EXISTS `sym_fields`;
@@ -121,10 +136,11 @@ CREATE TABLE `sym_fields` (
   `show_column` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `index` (`element_name`,`type`,`parent_section`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields` ***
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (1, 'Category', 'category', 'input', 1, 'yes', 0, 'main', 'yes');
+INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (2, 'Sort', 'sort', 'order_entries', 1, 'no', 1, 'sidebar', 'yes');
 
 -- *** STRUCTURE: `sym_fields_author` ***
 DROP TABLE IF EXISTS `sym_fields_author`;
@@ -173,10 +189,24 @@ CREATE TABLE `sym_fields_input` (
   `validator` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields_input` ***
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (1, 1, NULL);
+INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (4, 1, NULL);
+
+-- *** STRUCTURE: `sym_fields_order_entries` ***
+DROP TABLE IF EXISTS `sym_fields_order_entries`;
+CREATE TABLE `sym_fields_order_entries` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `field_id` int(11) unsigned NOT NULL,
+  `force_sort` enum('yes','no') DEFAULT 'no',
+  `hide` enum('yes','no') DEFAULT 'no',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `field_id` (`field_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- *** DATA: `sym_fields_order_entries` ***
+INSERT INTO `sym_fields_order_entries` (`id`, `field_id`, `force_sort`, `hide`) VALUES (3, 2, NULL, 'no');
 
 -- *** STRUCTURE: `sym_fields_select` ***
 DROP TABLE IF EXISTS `sym_fields_select`;
@@ -297,7 +327,7 @@ CREATE TABLE `sym_sections` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_sections` ***
-INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (1, 'Categories', 'categories', 1, NULL, 'asc', 'no', 'Content');
+INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (1, 'Categories', 'categories', 1, 2, 'asc', 'no', 'Content');
 
 -- *** STRUCTURE: `sym_sections_association` ***
 DROP TABLE IF EXISTS `sym_sections_association`;
