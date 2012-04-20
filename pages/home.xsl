@@ -16,18 +16,14 @@
 			<a href="#" class="clip" title="select code for copying">
 				<img src="{$workspace}/assets/images/icon-copy.png" alt="copy" />
 			</a>
-			<textarea class="mod-ta">
-				<xsl:value-of select="welcome-pattern/entry/html" />
-			</textarea>
+			<textarea class="mod-ta"><xsl:copy-of select="welcome-pattern/entry/html/*" /></textarea>
 		</div>
 		<div id="style" class="mod">
 			<h3 class="label">CSS</h3>
 			<a href="#" class="clip" title="select code for copying">
 				<img src="{$workspace}/assets/images/icon-copy.png" alt="copy" />
 			</a>
-			<textarea class="mod-ta">
-				<xsl:value-of select="welcome-pattern/entry/css" />
-			</textarea>
+			<textarea class="mod-ta"><xsl:value-of select="welcome-pattern/entry/css" /></textarea>
 		</div>
 	</div>
 </xsl:template>
