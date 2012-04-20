@@ -22,10 +22,10 @@ CREATE TABLE `tbl_fields_checkbox` (
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_checkbox` ***
-INSERT INTO `tbl_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (4, 6, 'off', NULL);
+INSERT INTO `tbl_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (5, 6, 'off', NULL);
 
 -- *** STRUCTURE: `tbl_fields_date` ***
 DROP TABLE IF EXISTS `tbl_fields_date`;
@@ -35,10 +35,10 @@ CREATE TABLE `tbl_fields_date` (
   `pre_populate` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_date` ***
-INSERT INTO `tbl_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (4, 5, 'yes');
+INSERT INTO `tbl_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (5, 5, 'yes');
 
 -- *** STRUCTURE: `tbl_fields_input` ***
 DROP TABLE IF EXISTS `tbl_fields_input`;
@@ -48,10 +48,11 @@ CREATE TABLE `tbl_fields_input` (
   `validator` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_input` ***
 INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (4, 1, NULL);
+INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (5, 10, NULL);
 
 -- *** STRUCTURE: `tbl_fields_order_entries` ***
 DROP TABLE IF EXISTS `tbl_fields_order_entries`;
@@ -94,10 +95,10 @@ CREATE TABLE `tbl_fields_selectbox_link` (
   `limit` int(4) unsigned NOT NULL DEFAULT '20',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `tbl_fields_selectbox_link` ***
-INSERT INTO `tbl_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `show_association`, `related_field_id`, `limit`) VALUES (4, 4, 'no', 'yes', 1, 20);
+INSERT INTO `tbl_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `show_association`, `related_field_id`, `limit`) VALUES (5, 4, 'no', 'yes', 1, 20);
 
 -- *** STRUCTURE: `tbl_fields_taglist` ***
 DROP TABLE IF EXISTS `tbl_fields_taglist`;
@@ -122,30 +123,11 @@ CREATE TABLE `tbl_fields_textarea` (
   `size` int(3) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_textarea` ***
-
--- *** STRUCTURE: `tbl_fields_textbox` ***
-DROP TABLE IF EXISTS `tbl_fields_textbox`;
-CREATE TABLE `tbl_fields_textbox` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `field_id` int(11) unsigned NOT NULL,
-  `column_length` int(11) unsigned DEFAULT '75',
-  `text_size` enum('single','small','medium','large','huge') DEFAULT 'medium',
-  `text_formatter` varchar(255) DEFAULT NULL,
-  `text_validator` varchar(255) DEFAULT NULL,
-  `text_length` int(11) unsigned DEFAULT '0',
-  `text_cdata` enum('yes','no') DEFAULT 'no',
-  `text_handle` enum('yes','no') DEFAULT 'no',
-  PRIMARY KEY (`id`),
-  KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
-
--- *** DATA: `tbl_fields_textbox` ***
-INSERT INTO `tbl_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (10, 3, 75, 'single', 'none', NULL, 0, 'no', 'yes');
-INSERT INTO `tbl_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (11, 7, 75, 'medium', 'none', NULL, 0, 'no', 'no');
-INSERT INTO `tbl_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (12, 8, 75, 'medium', 'none', NULL, 0, 'no', 'no');
+INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (1, 11, NULL, 15);
+INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (2, 12, NULL, 15);
 
 -- *** STRUCTURE: `tbl_fields_uniquecheckbox` ***
 DROP TABLE IF EXISTS `tbl_fields_uniquecheckbox`;
@@ -158,10 +140,10 @@ CREATE TABLE `tbl_fields_uniquecheckbox` (
   `unique_steal` enum('on','off') NOT NULL DEFAULT 'on',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_uniquecheckbox` ***
-INSERT INTO `tbl_fields_uniquecheckbox` (`id`, `field_id`, `default_state`, `description`, `unique_entries`, `unique_steal`) VALUES (3, 9, 'off', 'Welcome (display on home page)', 1, 'on');
+INSERT INTO `tbl_fields_uniquecheckbox` (`id`, `field_id`, `default_state`, `description`, `unique_entries`, `unique_steal`) VALUES (4, 9, 'off', 'Welcome (display on home page)', 1, 'on');
 
 -- *** STRUCTURE: `tbl_fields_upload` ***
 DROP TABLE IF EXISTS `tbl_fields_upload`;
@@ -195,6 +177,52 @@ INSERT INTO `tbl_entries_data_1` (`id`, `entry_id`, `handle`, `value`) VALUES (2
 INSERT INTO `tbl_entries_data_1` (`id`, `entry_id`, `handle`, `value`) VALUES (3, 3, 'lists', 'Lists');
 INSERT INTO `tbl_entries_data_1` (`id`, `entry_id`, `handle`, `value`) VALUES (4, 4, 'navigation', 'Navigation');
 
+-- *** STRUCTURE: `tbl_entries_data_10` ***
+DROP TABLE IF EXISTS `tbl_entries_data_10`;
+CREATE TABLE `tbl_entries_data_10` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) unsigned NOT NULL,
+  `handle` varchar(255) DEFAULT NULL,
+  `value` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `entry_id` (`entry_id`),
+  KEY `handle` (`handle`),
+  KEY `value` (`value`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- *** DATA: `tbl_entries_data_10` ***
+INSERT INTO `tbl_entries_data_10` (`id`, `entry_id`, `handle`, `value`) VALUES (2, 5, 'title', 'Title');
+
+-- *** STRUCTURE: `tbl_entries_data_11` ***
+DROP TABLE IF EXISTS `tbl_entries_data_11`;
+CREATE TABLE `tbl_entries_data_11` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) unsigned NOT NULL,
+  `value` mediumtext,
+  `value_formatted` mediumtext,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `entry_id` (`entry_id`),
+  FULLTEXT KEY `value` (`value`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- *** DATA: `tbl_entries_data_11` ***
+INSERT INTO `tbl_entries_data_11` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (2, 5, '<p class=\"welcome\">\r\nCollect, test, and experiment with <strong>interface pattern pairings</strong> of <abbr>CSS</abbr> & <abbr>HTML</abbr>. <strong>Pears</strong> is an <a href=\"https://github.com/simplebits/Pears\">open source WordPress theme</a>, enabling people like you to get your own pattern library up and running quickly.\r\n</p>\r\n<ol class=\"steps\">\r\n	<li><a href=\"https://github.com/simplebits/Pears\">Grab the theme at Github</a>.</li>\r\n	<li>Install the theme.</li>\r\n	<li>Create markup & style patterns.</li>\r\n	<li>Learn.</li>\r\n</ol>', NULL);
+
+-- *** STRUCTURE: `tbl_entries_data_12` ***
+DROP TABLE IF EXISTS `tbl_entries_data_12`;
+CREATE TABLE `tbl_entries_data_12` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) unsigned NOT NULL,
+  `value` mediumtext,
+  `value_formatted` mediumtext,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `entry_id` (`entry_id`),
+  FULLTEXT KEY `value` (`value`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- *** DATA: `tbl_entries_data_12` ***
+INSERT INTO `tbl_entries_data_12` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (2, 5, 'p.welcome,\r\nol.steps {\r\n	font-size: 1.6em;\r\n	line-height: 1.4;\r\n	}\r\np.welcome {\r\n	margin: 0 0 1.4em;\r\n	}\r\np.welcome abbr {\r\n	letter-spacing: 3px;\r\n	}\r\nol.steps li {\r\n	list-style: decimal;\r\n	margin-left: 1.4em;\r\n	}', NULL);
+
 -- *** STRUCTURE: `tbl_entries_data_2` ***
 DROP TABLE IF EXISTS `tbl_entries_data_2`;
 CREATE TABLE `tbl_entries_data_2` (
@@ -212,24 +240,6 @@ INSERT INTO `tbl_entries_data_2` (`id`, `entry_id`, `value`) VALUES (2, 2, 2);
 INSERT INTO `tbl_entries_data_2` (`id`, `entry_id`, `value`) VALUES (3, 3, 3);
 INSERT INTO `tbl_entries_data_2` (`id`, `entry_id`, `value`) VALUES (4, 4, 4);
 
--- *** STRUCTURE: `tbl_entries_data_3` ***
-DROP TABLE IF EXISTS `tbl_entries_data_3`;
-CREATE TABLE `tbl_entries_data_3` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` text,
-  `value_formatted` text,
-  `word_count` int(11) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `entry_id` (`entry_id`),
-  FULLTEXT KEY `value` (`value`),
-  FULLTEXT KEY `value_formatted` (`value_formatted`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- *** DATA: `tbl_entries_data_3` ***
-INSERT INTO `tbl_entries_data_3` (`id`, `entry_id`, `handle`, `value`, `value_formatted`, `word_count`) VALUES (2, 5, 'welcome', 'Welcome', 'Welcome', 1);
-
 -- *** STRUCTURE: `tbl_entries_data_4` ***
 DROP TABLE IF EXISTS `tbl_entries_data_4`;
 CREATE TABLE `tbl_entries_data_4` (
@@ -239,10 +249,10 @@ CREATE TABLE `tbl_entries_data_4` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `tbl_entries_data_4` ***
-INSERT INTO `tbl_entries_data_4` (`id`, `entry_id`, `relation_id`) VALUES (2, 5, NULL);
+INSERT INTO `tbl_entries_data_4` (`id`, `entry_id`, `relation_id`) VALUES (4, 5, NULL);
 
 -- *** STRUCTURE: `tbl_entries_data_5` ***
 DROP TABLE IF EXISTS `tbl_entries_data_5`;
@@ -255,10 +265,10 @@ CREATE TABLE `tbl_entries_data_5` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_5` ***
-INSERT INTO `tbl_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (2, 5, '2012-04-20T11:16:00-07:00', 1334945760, 1334945760);
+INSERT INTO `tbl_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (4, 5, '2012-04-20T11:16:00-07:00', 1334945760, 1334945760);
 
 -- *** STRUCTURE: `tbl_entries_data_6` ***
 DROP TABLE IF EXISTS `tbl_entries_data_6`;
@@ -269,46 +279,10 @@ CREATE TABLE `tbl_entries_data_6` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_6` ***
-INSERT INTO `tbl_entries_data_6` (`id`, `entry_id`, `value`) VALUES (2, 5, 'no');
-
--- *** STRUCTURE: `tbl_entries_data_7` ***
-DROP TABLE IF EXISTS `tbl_entries_data_7`;
-CREATE TABLE `tbl_entries_data_7` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` text,
-  `value_formatted` text,
-  `word_count` int(11) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `entry_id` (`entry_id`),
-  FULLTEXT KEY `value` (`value`),
-  FULLTEXT KEY `value_formatted` (`value_formatted`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- *** DATA: `tbl_entries_data_7` ***
-INSERT INTO `tbl_entries_data_7` (`id`, `entry_id`, `handle`, `value`, `value_formatted`, `word_count`) VALUES (2, 5, 'collect-test-and-experiment-with-interface-pattern-pairings-of-css-and-html-pears-is-an-open-source-wordpress-theme-enabling-people-like-you-to-get-your-own-pattern-library-up-and-running-quickly-grab-the-theme-at-github-install-the-theme-crea', '<p class=\"welcome\">\r\nCollect, test, and experiment with <strong>interface pattern pairings</strong> of <abbr>CSS</abbr> & <abbr>HTML</abbr>. <strong>Pears</strong> is an <a href=\"https://github.com/simplebits/Pears\">open source WordPress theme</a>, enabling people like you to get your own pattern library up and running quickly.\r\n</p>\r\n<ol class=\"steps\">\r\n	<li><a href=\"https://github.com/simplebits/Pears\">Grab the theme at Github</a>.</li>\r\n	<li>Install the theme.</li>\r\n	<li>Create markup & style patterns.</li>\r\n	<li>Learn.\r\n</ol>', '&lt;p class=&quot;welcome&quot;&gt;\r\nCollect, test, and experiment with &lt;strong&gt;interface pattern pairings&lt;/strong&gt; of &lt;abbr&gt;CSS&lt;/abbr&gt; &amp; &lt;abbr&gt;HTML&lt;/abbr&gt;. &lt;strong&gt;Pears&lt;/strong&gt; is an &lt;a href=&quot;https://github.com/simplebits/Pears&quot;&gt;open source WordPress theme&lt;/a&gt;, enabling people like you to get your own pattern library up and running quickly.\r\n&lt;/p&gt;\r\n&lt;ol class=&quot;steps&quot;&gt;\r\n	&lt;li&gt;&lt;a href=&quot;https://github.com/simplebits/Pears&quot;&gt;Grab the theme at Github&lt;/a&gt;.&lt;/li&gt;\r\n	&lt;li&gt;Install the theme.&lt;/li&gt;\r\n	&lt;li&gt;Create markup &amp; style patterns.&lt;/li&gt;\r\n	&lt;li&gt;Learn.\r\n&lt;/ol&gt;', 45);
-
--- *** STRUCTURE: `tbl_entries_data_8` ***
-DROP TABLE IF EXISTS `tbl_entries_data_8`;
-CREATE TABLE `tbl_entries_data_8` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` text,
-  `value_formatted` text,
-  `word_count` int(11) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `entry_id` (`entry_id`),
-  FULLTEXT KEY `value` (`value`),
-  FULLTEXT KEY `value_formatted` (`value_formatted`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- *** DATA: `tbl_entries_data_8` ***
-INSERT INTO `tbl_entries_data_8` (`id`, `entry_id`, `handle`, `value`, `value_formatted`, `word_count`) VALUES (2, 5, 'pwelcome-olsteps-{-font-size-16em-line-height-14-}-pwelcome-{-margin-0-0-14em-}-pwelcome-abbr-{-letter-spacing-3px-}-olsteps-li-{-list-style-decimal-margin-left-14em-}', 'p.welcome,\r\nol.steps {\r\n	font-size: 1.6em;\r\n	line-height: 1.4;\r\n	}\r\np.welcome {\r\n	margin: 0 0 1.4em;\r\n	}\r\np.welcome abbr {\r\n	letter-spacing: 3px;\r\n	}\r\nol.steps li {\r\n	list-style: decimal;\r\n	margin-left: 1.4em;\r\n	}', 'p.welcome,\r\nol.steps {\r\n	font-size: 1.6em;\r\n	line-height: 1.4;\r\n	}\r\np.welcome {\r\n	margin: 0 0 1.4em;\r\n	}\r\np.welcome abbr {\r\n	letter-spacing: 3px;\r\n	}\r\nol.steps li {\r\n	list-style: decimal;\r\n	margin-left: 1.4em;\r\n	}', 18);
+INSERT INTO `tbl_entries_data_6` (`id`, `entry_id`, `value`) VALUES (4, 5, 'no');
 
 -- *** STRUCTURE: `tbl_entries_data_9` ***
 DROP TABLE IF EXISTS `tbl_entries_data_9`;
@@ -321,10 +295,10 @@ CREATE TABLE `tbl_entries_data_9` (
   KEY `entry_id` (`entry_id`),
   KEY `value` (`value`),
   KEY `order` (`order`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_9` ***
-INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (2, 5, 'yes', 1334946006);
+INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (4, 5, 'yes', 1334948139);
 
 -- *** DATA: `tbl_entries` ***
 INSERT INTO `tbl_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (1, 1, 1, '2012-04-20 10:34:38', '2012-04-20 17:34:38');
@@ -346,7 +320,6 @@ INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (9, 'mar
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (10, 'edui', 'enabled', '0.6.1');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (11, 'html5_doctype', 'enabled', '1.2.5');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (12, 'order_entries', 'enabled', '1.9.8');
-INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (13, 'textboxfield', 'enabled', 2.2);
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (14, 'uniquecheckboxfield', 'enabled', 1.1);
 
 -- *** DATA: `tbl_extensions_delegates` ***
@@ -378,12 +351,12 @@ INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 -- *** DATA: `tbl_fields` ***
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (1, 'Category', 'category', 'input', 1, 'yes', 0, 'main', 'yes');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (2, 'Sort', 'sort', 'order_entries', 1, 'no', 1, 'sidebar', 'yes');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (3, 'Title', 'title', 'textbox', 2, 'yes', 0, 'sidebar', 'yes');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (12, 'CSS', 'css', 'textarea', 2, 'yes', 5, 'main', 'no');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (4, 'Category', 'category', 'selectbox_link', 2, 'no', 1, 'sidebar', 'yes');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (5, 'Date', 'date', 'date', 2, 'no', 2, 'sidebar', 'yes');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (6, 'Publish', 'publish', 'checkbox', 2, 'no', 3, 'sidebar', 'yes');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (7, 'HTML', 'html', 'textbox', 2, 'no', 4, 'main', 'no');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (8, 'CSS', 'css', 'textbox', 2, 'no', 5, 'main', 'no');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (11, 'HTML', 'html', 'textarea', 2, 'yes', 4, 'main', 'no');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (10, 'Title', 'title', 'input', 2, 'yes', 0, 'main', 'yes');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (9, 'Welcome', 'welcome', 'uniquecheckbox', 2, 'no', 6, 'sidebar', 'yes');
 
 -- *** DATA: `tbl_pages` ***
@@ -397,4 +370,4 @@ INSERT INTO `tbl_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, 
 INSERT INTO `tbl_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (2, 'Patterns', 'patterns', 1, NULL, 'asc', 'no', 'Content');
 
 -- *** DATA: `tbl_sections_association` ***
-INSERT INTO `tbl_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (4, 1, 1, 2, 4, 'no');
+INSERT INTO `tbl_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (5, 1, 1, 2, 4, 'no');
