@@ -28,3 +28,6 @@
 [submodule "extensions/edui"]
 	path = extensions/edui
 	url = git://github.com/eKoeS/edui.git
+[submodule "extensions/html5_doctype"]
+	path = extensions/html5_doctype
+	url = git://github.com/domain7/html5_doctype.git
