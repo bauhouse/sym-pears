@@ -189,22 +189,6 @@ CREATE TABLE `tbl_fields_textarea` (
   `size` int(3) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- *** STRUCTURE: `tbl_fields_textbox` ***
-DROP TABLE IF EXISTS `tbl_fields_textbox`;
-CREATE TABLE `tbl_fields_textbox` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `field_id` int(11) unsigned NOT NULL,
-  `column_length` int(11) unsigned DEFAULT '75',
-  `text_size` enum('single','small','medium','large','huge') DEFAULT 'medium',
-  `text_formatter` varchar(255) DEFAULT NULL,
-  `text_validator` varchar(255) DEFAULT NULL,
-  `text_length` int(11) unsigned DEFAULT '0',
-  `text_cdata` enum('yes','no') DEFAULT 'no',
-  `text_handle` enum('yes','no') DEFAULT 'no',
-  PRIMARY KEY (`id`),
-  KEY `field_id` (`field_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 -- *** STRUCTURE: `tbl_fields_uniquecheckbox` ***
