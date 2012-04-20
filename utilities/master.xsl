@@ -27,7 +27,7 @@
 							<xsl:apply-templates />
 						</div>
 					</div>
-					<xsl:call-template name="nav" />
+					<xsl:apply-templates select="data/nav" mode="nav" />
 				</div>
 			</div>
 			<div id="pears-footer">
@@ -60,6 +60,27 @@
 	<script type="text/javascript" src="{$workspace}/assets/js/less.js"></script>
 	<script type="text/javascript" src="http://use.typekit.com/kpo7dtm.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</xsl:template>
+
+<xsl:template match="data/nav" mode="nav">
+	<nav id="nav" class="group">
+		<a href="#" id="nav-toggle">hide</a>
+		<xsl:apply-templates select="category" mode="nav" />
+	</nav>
+</xsl:template>
+
+<xsl:template match="category" mode="nav">
+	<h2><a href="#"><xsl:value-of select="@value" /></a></h2>
+	<ul>
+		<xsl:apply-templates select="entry" mode="nav">
+			<xsl:with-param name="category-handle" select="@link-handle" />
+		</xsl:apply-templates>
+	</ul>
+</xsl:template>
+
+<xsl:template match="entry" mode="nav">
+	<xsl:param name="category-handle" />
+	<li><a href="{$root}/patterns/{$category-handle}/{title/@handle}/"><xsl:value-of select="title" /></a></li>
 </xsl:template>
 
 <xsl:template name="nav">
