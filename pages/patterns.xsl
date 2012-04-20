@@ -34,4 +34,11 @@
 	</div>
 </xsl:template>
 
+<xsl:template name="title">
+	<title>
+		<xsl:value-of select="$website-name" />
+		<xsl:if test="$title"><xsl:text> / </xsl:text><xsl:value-of select="data/patterns/entry/title" /></xsl:if>
+	</title>
+</xsl:template>
+
 </xsl:stylesheet>

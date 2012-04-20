@@ -43,7 +43,7 @@
 <xsl:template name="head">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	
-	<title>Pears </title>
+	<xsl:call-template name="title" />
 	
 	<xsl:comment>hide css from IE6 but load for everyone else</xsl:comment>
 	<xsl:comment><![CDATA[[if gte IE 7]><!]]></xsl:comment>
@@ -60,6 +60,10 @@
 	<script type="text/javascript" src="{$workspace}/assets/js/less.js"></script>
 	<script type="text/javascript" src="http://use.typekit.com/kpo7dtm.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</xsl:template>
+
+<xsl:template name="title">
+	<title><xsl:value-of select="$website-name" /></title>
 </xsl:template>
 
 <xsl:template match="data/nav" mode="nav">
