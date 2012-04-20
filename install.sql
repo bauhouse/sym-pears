@@ -46,9 +46,10 @@ CREATE TABLE `tbl_fields_input` (
   `validator` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_input` ***
+INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (1, 1, NULL);
 
 -- *** STRUCTURE: `tbl_fields_select` ***
 DROP TABLE IF EXISTS `tbl_fields_select`;
@@ -121,6 +122,21 @@ CREATE TABLE `tbl_fields_upload` (
 
 -- *** DATA: `tbl_fields_upload` ***
 
+-- *** STRUCTURE: `tbl_entries_data_1` ***
+DROP TABLE IF EXISTS `tbl_entries_data_1`;
+CREATE TABLE `tbl_entries_data_1` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) unsigned NOT NULL,
+  `handle` varchar(255) DEFAULT NULL,
+  `value` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `entry_id` (`entry_id`),
+  KEY `handle` (`handle`),
+  KEY `value` (`value`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- *** DATA: `tbl_entries_data_1` ***
+
 -- *** DATA: `tbl_entries` ***
 
 -- *** DATA: `tbl_extensions` ***
@@ -162,6 +178,7 @@ INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (23, 11, '/frontend/', 'FrontendOutputPostGenerate', 'parse_html');
 
 -- *** DATA: `tbl_fields` ***
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (1, 'Category', 'category', 'input', 1, 'yes', 0, 'main', 'yes');
 
 -- *** DATA: `tbl_pages` ***
 INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (1, NULL, 'Home', 'home', NULL, NULL, NULL, NULL, 1);
@@ -170,5 +187,6 @@ INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `d
 INSERT INTO `tbl_pages_types` (`id`, `page_id`, `type`) VALUES (1, 1, 'index');
 
 -- *** DATA: `tbl_sections` ***
+INSERT INTO `tbl_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (1, 'Categories', 'categories', 1, NULL, 'asc', 'no', 'Content');
 
 -- *** DATA: `tbl_sections_association` ***

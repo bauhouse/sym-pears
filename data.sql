@@ -29,6 +29,21 @@ CREATE TABLE `sym_entries` (
 
 -- *** DATA: `sym_entries` ***
 
+-- *** STRUCTURE: `sym_entries_data_1` ***
+DROP TABLE IF EXISTS `sym_entries_data_1`;
+CREATE TABLE `sym_entries_data_1` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) unsigned NOT NULL,
+  `handle` varchar(255) DEFAULT NULL,
+  `value` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `entry_id` (`entry_id`),
+  KEY `handle` (`handle`),
+  KEY `value` (`value`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- *** DATA: `sym_entries_data_1` ***
+
 -- *** STRUCTURE: `sym_extensions` ***
 DROP TABLE IF EXISTS `sym_extensions`;
 CREATE TABLE `sym_extensions` (
@@ -106,9 +121,10 @@ CREATE TABLE `sym_fields` (
   `show_column` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `index` (`element_name`,`type`,`parent_section`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields` ***
+INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (1, 'Category', 'category', 'input', 1, 'yes', 0, 'main', 'yes');
 
 -- *** STRUCTURE: `sym_fields_author` ***
 DROP TABLE IF EXISTS `sym_fields_author`;
@@ -157,9 +173,10 @@ CREATE TABLE `sym_fields_input` (
   `validator` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields_input` ***
+INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (1, 1, NULL);
 
 -- *** STRUCTURE: `sym_fields_select` ***
 DROP TABLE IF EXISTS `sym_fields_select`;
@@ -277,9 +294,10 @@ CREATE TABLE `sym_sections` (
   `navigation_group` varchar(255) NOT NULL DEFAULT 'Content',
   PRIMARY KEY (`id`),
   UNIQUE KEY `handle` (`handle`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_sections` ***
+INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (1, 'Categories', 'categories', 1, NULL, 'asc', 'no', 'Content');
 
 -- *** STRUCTURE: `sym_sections_association` ***
 DROP TABLE IF EXISTS `sym_sections_association`;
