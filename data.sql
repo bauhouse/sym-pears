@@ -161,6 +161,21 @@ CREATE TABLE `sym_entries_data_8` (
 
 -- *** DATA: `sym_entries_data_8` ***
 
+-- *** STRUCTURE: `sym_entries_data_9` ***
+DROP TABLE IF EXISTS `sym_entries_data_9`;
+CREATE TABLE `sym_entries_data_9` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) unsigned NOT NULL,
+  `value` varchar(255) DEFAULT NULL,
+  `order` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `entry_id` (`entry_id`),
+  KEY `value` (`value`),
+  KEY `order` (`order`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- *** DATA: `sym_entries_data_9` ***
+
 -- *** STRUCTURE: `sym_extensions` ***
 DROP TABLE IF EXISTS `sym_extensions`;
 CREATE TABLE `sym_extensions` (
@@ -170,7 +185,7 @@ CREATE TABLE `sym_extensions` (
   `version` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_extensions` ***
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (1, 'xssfilter', 'enabled', 1.1);
@@ -186,6 +201,7 @@ INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (10, 'ed
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (11, 'html5_doctype', 'enabled', '1.2.5');
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (12, 'order_entries', 'enabled', '1.9.8');
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (13, 'textboxfield', 'enabled', 2.2);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (14, 'uniquecheckboxfield', 'enabled', 1.1);
 
 -- *** STRUCTURE: `sym_extensions_delegates` ***
 DROP TABLE IF EXISTS `sym_extensions_delegates`;
@@ -241,7 +257,7 @@ CREATE TABLE `sym_fields` (
   `show_column` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `index` (`element_name`,`type`,`parent_section`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields` ***
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (1, 'Category', 'category', 'input', 1, 'yes', 0, 'main', 'yes');
@@ -252,6 +268,7 @@ INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (6, 'Publish', 'publish', 'checkbox', 2, 'no', 3, 'sidebar', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (7, 'HTML', 'html', 'textbox', 2, 'no', 4, 'main', 'no');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (8, 'CSS', 'css', 'textbox', 2, 'no', 5, 'main', 'no');
+INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (9, 'Welcome', 'welcome', 'uniquecheckbox', 2, 'no', 6, 'sidebar', 'yes');
 
 -- *** STRUCTURE: `sym_fields_author` ***
 DROP TABLE IF EXISTS `sym_fields_author`;
@@ -276,10 +293,10 @@ CREATE TABLE `sym_fields_checkbox` (
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields_checkbox` ***
-INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (1, 6, 'off', NULL);
+INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (3, 6, 'off', NULL);
 
 -- *** STRUCTURE: `sym_fields_date` ***
 DROP TABLE IF EXISTS `sym_fields_date`;
@@ -289,10 +306,10 @@ CREATE TABLE `sym_fields_date` (
   `pre_populate` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields_date` ***
-INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (1, 5, 'yes');
+INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (3, 5, 'yes');
 
 -- *** STRUCTURE: `sym_fields_input` ***
 DROP TABLE IF EXISTS `sym_fields_input`;
@@ -348,10 +365,10 @@ CREATE TABLE `sym_fields_selectbox_link` (
   `limit` int(4) unsigned NOT NULL DEFAULT '20',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_selectbox_link` ***
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `show_association`, `related_field_id`, `limit`) VALUES (1, 4, 'no', 'yes', 1, 20);
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `show_association`, `related_field_id`, `limit`) VALUES (3, 4, 'no', 'yes', 1, 20);
 
 -- *** STRUCTURE: `sym_fields_taglist` ***
 DROP TABLE IF EXISTS `sym_fields_taglist`;
@@ -394,12 +411,28 @@ CREATE TABLE `sym_fields_textbox` (
   `text_handle` enum('yes','no') DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields_textbox` ***
-INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (1, 3, 75, 'single', 'none', NULL, 0, 'no', 'yes');
-INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (2, 7, 75, 'medium', 'none', NULL, 0, 'no', 'no');
-INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (3, 8, 75, 'medium', 'none', NULL, 0, 'no', 'no');
+INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (7, 3, 75, 'single', 'none', NULL, 0, 'no', 'yes');
+INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (8, 7, 75, 'medium', 'none', NULL, 0, 'no', 'no');
+INSERT INTO `sym_fields_textbox` (`id`, `field_id`, `column_length`, `text_size`, `text_formatter`, `text_validator`, `text_length`, `text_cdata`, `text_handle`) VALUES (9, 8, 75, 'medium', 'none', NULL, 0, 'no', 'no');
+
+-- *** STRUCTURE: `sym_fields_uniquecheckbox` ***
+DROP TABLE IF EXISTS `sym_fields_uniquecheckbox`;
+CREATE TABLE `sym_fields_uniquecheckbox` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `field_id` int(11) unsigned NOT NULL,
+  `default_state` enum('on','off') NOT NULL DEFAULT 'on',
+  `description` varchar(255) DEFAULT NULL,
+  `unique_entries` int(11) unsigned NOT NULL DEFAULT '1',
+  `unique_steal` enum('on','off') NOT NULL DEFAULT 'on',
+  PRIMARY KEY (`id`),
+  KEY `field_id` (`field_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- *** DATA: `sym_fields_uniquecheckbox` ***
+INSERT INTO `sym_fields_uniquecheckbox` (`id`, `field_id`, `default_state`, `description`, `unique_entries`, `unique_steal`) VALUES (2, 9, 'off', 'Welcome (display on home page)', 1, 'on');
 
 -- *** STRUCTURE: `sym_fields_upload` ***
 DROP TABLE IF EXISTS `sym_fields_upload`;
@@ -476,7 +509,7 @@ CREATE TABLE `sym_sections_association` (
   `hide_association` enum('yes','no') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `parent_section_id` (`parent_section_id`,`child_section_id`,`child_section_field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_sections_association` ***
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (1, 1, 1, 2, 4, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (3, 1, 1, 2, 4, 'no');
