@@ -65,7 +65,39 @@
 <xsl:template name="nav">
 	<nav id="nav" class="group">
 		<a href="#" id="nav-toggle">hide</a>
-			<h2><a href="#">Content</a></h2><ul><li><a href="content/blog-post/index.html">Article</a></li><li><a href="content/data-table/index.html">Data Table</a></li><li><a href="content/footer/index.html">Footer</a></li><li><a href="content/slats-html5/index.html">Slats (HTML5)</a></li><li><a href="content/slats-text-only/index.html">Slats (text only)</a></li><li><a href="content/slats-thumbnails/index.html">Slats (thumbnails)</a></li><li><a href="content/thumbnail-grid/index.html">Thumbnail Grid</a></li></ul><h2><a href="#">Forms</a></h2><ul><li><a href="forms/multi-left-labels/index.html">Multi (left labels)</a></li><li><a href="forms/top-labels/index.html">Multi (top labels)</a></li><li><a href="forms/search/index.html">Search</a></li><li><a href="forms/simple-top-labels/index.html">Simple (top labels)</a></li></ul><h2><a href="#">Lists</a></h2><ul><li><a href="lists/definition/index.html">Definition</a></li><li><a href="lists/stats-tabs/index.html">Stats Tabs</a></li><li><a href="lists/tags-buttons/index.html">Tags (buttons)</a></li><li><a href="lists/tags-vertical/index.html">Tags (vertical)</a></li></ul><h2><a href="#">Navigation</a></h2><ul><li><a href="navigation/breadcrumb/index.html">Breadcrumb</a></li><li><a href="navigation/horizontal-buttons/index.html">Horizontal Buttons</a></li><li><a href="navigation/horizontal-links/index.html">Horizontal Links</a></li><li><a href="navigation/horizontal-tabs/index.html">Horizontal Tabs</a></li><li><a href="navigation/pagination/index.html">Pagination</a></li><li><a href="navigation/vertical-links/index.html">Vertical Links</a></li></ul>
+		<h2><a href="#">Content</a></h2>
+		<ul>
+			<li><a href="content/blog-post/index.html">Article</a></li>
+			<li><a href="content/data-table/index.html">Data Table</a></li>
+			<li><a href="content/footer/index.html">Footer</a></li>
+			<li><a href="content/slats-html5/index.html">Slats (HTML5)</a></li>
+			<li><a href="content/slats-text-only/index.html">Slats (text only)</a></li>
+			<li><a href="content/slats-thumbnails/index.html">Slats (thumbnails)</a></li>
+			<li><a href="content/thumbnail-grid/index.html">Thumbnail Grid</a></li>
+		</ul>
+		<h2><a href="#">Forms</a></h2>
+		<ul>
+			<li><a href="forms/multi-left-labels/index.html">Multi (left labels)</a></li>
+			<li><a href="forms/top-labels/index.html">Multi (top labels)</a></li>
+			<li><a href="forms/search/index.html">Search</a></li>
+			<li><a href="forms/simple-top-labels/index.html">Simple (top labels)</a></li>
+		</ul>
+		<h2><a href="#">Lists</a></h2>
+		<ul>
+			<li><a href="lists/definition/index.html">Definition</a></li>
+			<li><a href="lists/stats-tabs/index.html">Stats Tabs</a></li>
+			<li><a href="lists/tags-buttons/index.html">Tags (buttons)</a></li>
+			<li><a href="lists/tags-vertical/index.html">Tags (vertical)</a></li>
+		</ul>
+		<h2><a href="#">Navigation</a></h2>
+		<ul>
+			<li><a href="navigation/breadcrumb/index.html">Breadcrumb</a></li>
+			<li><a href="navigation/horizontal-buttons/index.html">Horizontal Buttons</a></li>
+			<li><a href="navigation/horizontal-links/index.html">Horizontal Links</a></li>
+			<li><a href="navigation/horizontal-tabs/index.html">Horizontal Tabs</a></li>
+			<li><a href="navigation/pagination/index.html">Pagination</a></li>
+			<li><a href="navigation/vertical-links/index.html">Vertical Links</a></li>
+		</ul>
 	</nav>
 </xsl:template>
 
