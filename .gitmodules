@@ -34,3 +34,6 @@
 [submodule "extensions/order_entries"]
 	path = extensions/order_entries
 	url = git://github.com/nickdunn/order_entries.git
+[submodule "extensions/textboxfield"]
+	path = extensions/textboxfield
+	url = git://github.com/rowan-lewis/textboxfield.git
