@@ -31,3 +31,6 @@
 [submodule "extensions/html5_doctype"]
 	path = extensions/html5_doctype
 	url = git://github.com/domain7/html5_doctype.git
+[submodule "extensions/order_entries"]
+	path = extensions/order_entries
+	url = git://github.com/nickdunn/order_entries.git
