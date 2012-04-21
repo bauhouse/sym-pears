@@ -37,3 +37,6 @@
 [submodule "extensions/uniquecheckboxfield"]
 	path = extensions/uniquecheckboxfield
 	url = git://github.com/rowan-lewis/uniquecheckboxfield.git
+[submodule "workspace"]
+	path = workspace
+	url = git://github.com/bauhouse/sym-pears.git
