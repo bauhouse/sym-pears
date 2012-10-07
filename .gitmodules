@@ -25,9 +25,6 @@
 [submodule "extensions/dump_db"]
 	path = extensions/dump_db
 	url = git://github.com/nils-werner/dump_db.git
-[submodule "extensions/edui"]
-	path = extensions/edui
-	url = git://github.com/eKoeS/edui.git
 [submodule "extensions/html5_doctype"]
 	path = extensions/html5_doctype
 	url = git://github.com/domain7/html5_doctype.git
@@ -36,7 +33,7 @@
 	url = git://github.com/nickdunn/order_entries.git
 [submodule "extensions/uniquecheckboxfield"]
 	path = extensions/uniquecheckboxfield
-	url = git://github.com/rowan-lewis/uniquecheckboxfield.git
+	url = git://github.com/symphonists/uniquecheckboxfield.git
 [submodule "workspace"]
 	path = workspace
 	url = git://github.com/bauhouse/sym-pears.git
