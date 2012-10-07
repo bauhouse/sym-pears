@@ -14,9 +14,9 @@
 			'pagination_maximum_rows' => '20',
 			'lang' => 'en',
 			'pages_table_nest_children' => 'no',
-			'version' => VERSION,
-			'cookie_prefix' => 'sym-',
 			'session_gc_divisor' => '10',
+			'version' => '2.3',
+			'cookie_prefix' => 'sym-',
 		),
 		########
 
@@ -29,8 +29,17 @@
 		########
 
 
+		###### IMAGE ######
+		'image' => array(
+			'cache' => '1',
+			'quality' => '90',
+		),
+		########
+
+
 		###### DATABASE ######
 		'database' => array(
+			'query_caching' => 'on',
 			'host' => 'localhost',
 			'port' => '3306',
 			'user' => null,
@@ -50,7 +59,8 @@
 
 		###### GENERAL ######
 		'general' => array(
-			'sitename' => 'Symphony CMS',
+			'useragent' => 'Symphony/2.3',
+			'sitename' => 'Pears',
 		),
 		########
 
@@ -72,17 +82,33 @@
 		###### REGION ######
 		'region' => array(
 			'time_format' => 'g:i a',
-			'date_format' => 'm/d/Y',
+			'date_format' => 'd F Y',
 			'datetime_separator' => ' ',
-			'timezone' => null
+			'timezone' => 'America/Vancouver',
 		),
 		########
 
 
-		###### IMAGE ######
-		'image' => array(
-			'cache' => '1',
-			'quality' => '90',
+		###### MAINTENANCE_MODE ######
+		'maintenance_mode' => array(
+			'enabled' => 'no',
+		),
+		########
+
+
+		###### DUMP_DB ######
+		'dump_db' => array(
+			'last_sync' => '2012-10-07T07:33:28-07:00',
+		),
+		########
+
+
+		###### SORTING ######
+		'sorting' => array(
+			'section_categories_sortby' => '2',
+			'section_categories_order' => 'asc',
+			'section_patterns_sortby' => '10',
+			'section_patterns_order' => 'asc',
 		),
 		########
 	);
