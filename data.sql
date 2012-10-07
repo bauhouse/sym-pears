@@ -246,37 +246,37 @@ CREATE TABLE `sym_entries_data_5` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `entry_id` int(11) unsigned NOT NULL,
   `value` varchar(80) DEFAULT NULL,
-  `local` int(11) DEFAULT NULL,
-  `gmt` int(11) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
-  KEY `value` (`value`)
+  KEY `value` (`value`),
+  KEY `date` (`date`)
 ) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_entries_data_5` ***
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (33, 5, '2012-04-20T11:16:00-07:00', 1334945760, 1334945760);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (6, 6, '2012-04-20T13:01:00-07:00', 1334952060, 1334952060);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (7, 7, '2012-04-20T13:33:00-07:00', 1334953980, 1334953980);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (21, 8, '2012-04-20T13:37:00-07:00', 1334954220, 1334954220);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (19, 9, '2012-04-20T13:37:00-07:00', 1334954220, 1334954220);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (10, 10, '2012-04-20T13:39:00-07:00', 1334954340, 1334954340);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (20, 11, '2012-04-20T13:40:00-07:00', 1334954400, 1334954400);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (18, 12, '2012-04-20T13:44:00-07:00', 1334954640, 1334954640);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (13, 13, '2012-04-20T13:45:00-07:00', 1334954700, 1334954700);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (14, 14, '2012-04-20T13:46:00-07:00', 1334954760, 1334954760);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (15, 15, '2012-04-20T13:47:00-07:00', 1334954820, 1334954820);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (16, 16, '2012-04-20T13:47:00-07:00', 1334954820, 1334954820);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (22, 17, '2012-04-20T15:57:00-07:00', 1334962620, 1334962620);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (23, 18, '2012-04-20T15:58:00-07:00', 1334962680, 1334962680);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (24, 19, '2012-04-20T15:58:00-07:00', 1334962680, 1334962680);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (25, 20, '2012-04-20T16:08:00-07:00', 1334963280, 1334963280);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (26, 21, '2012-04-20T16:13:00-07:00', 1334963580, 1334963580);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (27, 22, '2012-04-20T16:14:00-07:00', 1334963640, 1334963640);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (28, 23, '2012-04-20T16:14:00-07:00', 1334963640, 1334963640);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (29, 24, '2012-04-20T16:15:00-07:00', 1334963700, 1334963700);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (30, 25, '2012-04-20T16:15:00-07:00', 1334963700, 1334963700);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (31, 26, '2012-04-20T16:16:00-07:00', 1334963760, 1334963760);
-INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (32, 27, '2012-04-20T16:16:00-07:00', 1334963760, 1334963760);
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (33, 5, '2012-04-20T11:16:00-07:00', '2012-04-20 18:16:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (6, 6, '2012-04-20T13:01:00-07:00', '2012-04-20 20:01:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (7, 7, '2012-04-20T13:33:00-07:00', '2012-04-20 20:33:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (21, 8, '2012-04-20T13:37:00-07:00', '2012-04-20 20:37:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (19, 9, '2012-04-20T13:37:00-07:00', '2012-04-20 20:37:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (10, 10, '2012-04-20T13:39:00-07:00', '2012-04-20 20:39:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (20, 11, '2012-04-20T13:40:00-07:00', '2012-04-20 20:40:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (18, 12, '2012-04-20T13:44:00-07:00', '2012-04-20 20:44:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (13, 13, '2012-04-20T13:45:00-07:00', '2012-04-20 20:45:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (14, 14, '2012-04-20T13:46:00-07:00', '2012-04-20 20:46:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (15, 15, '2012-04-20T13:47:00-07:00', '2012-04-20 20:47:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (16, 16, '2012-04-20T13:47:00-07:00', '2012-04-20 20:47:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (22, 17, '2012-04-20T15:57:00-07:00', '2012-04-20 22:57:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (23, 18, '2012-04-20T15:58:00-07:00', '2012-04-20 22:58:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (24, 19, '2012-04-20T15:58:00-07:00', '2012-04-20 22:58:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (25, 20, '2012-04-20T16:08:00-07:00', '2012-04-20 23:08:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (26, 21, '2012-04-20T16:13:00-07:00', '2012-04-20 23:13:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (27, 22, '2012-04-20T16:14:00-07:00', '2012-04-20 23:14:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (28, 23, '2012-04-20T16:14:00-07:00', '2012-04-20 23:14:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (29, 24, '2012-04-20T16:15:00-07:00', '2012-04-20 23:15:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (30, 25, '2012-04-20T16:15:00-07:00', '2012-04-20 23:15:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (31, 26, '2012-04-20T16:16:00-07:00', '2012-04-20 23:16:00');
+INSERT INTO `sym_entries_data_5` (`id`, `entry_id`, `value`, `date`) VALUES (32, 27, '2012-04-20T16:16:00-07:00', '2012-04-20 23:16:00');
 
 -- *** STRUCTURE: `sym_entries_data_6` ***
 DROP TABLE IF EXISTS `sym_entries_data_6`;
@@ -364,19 +364,18 @@ CREATE TABLE `sym_extensions` (
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_extensions` ***
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (1, 'xssfilter', 'enabled', 1.1);
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (2, 'debugdevkit', 'enabled', '1.2.1');
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (3, 'dump_db', 'enabled', 1.09);
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (4, 'export_ensemble', 'enabled', 1.16);
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (5, 'selectbox_link_field', 'enabled', 1.22);
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (6, 'jit_image_manipulation', 'enabled', 1.14);
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (7, 'maintenance_mode', 'enabled', 1.5);
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (8, 'profiledevkit', 'enabled', '1.0.4');
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (9, 'markdown', 'enabled', 1.13);
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (10, 'edui', 'enabled', '0.6.1');
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (11, 'html5_doctype', 'enabled', '1.2.5');
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (12, 'order_entries', 'enabled', '1.9.8');
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (14, 'uniquecheckboxfield', 'enabled', 1.1);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (1, 'xssfilter', 'enabled', '1.1.1');
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (2, 'debugdevkit', 'enabled', '1.2.2');
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (3, 'dump_db', 'enabled', 1.10);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (4, 'export_ensemble', 'enabled', '2.0.1');
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (5, 'selectbox_link_field', 'enabled', 1.23);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (6, 'jit_image_manipulation', 'enabled', 1.15);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (7, 'maintenance_mode', 'enabled', 1.6);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (8, 'profiledevkit', 'enabled', 1.1);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (9, 'markdown', 'enabled', 1.14);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (11, 'html5_doctype', 'enabled', 1.3);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (12, 'order_entries', 'enabled', '1.10.1');
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (14, 'uniquecheckboxfield', 'enabled', 1.2);
 
 -- *** STRUCTURE: `sym_extensions_delegates` ***
 DROP TABLE IF EXISTS `sym_extensions_delegates`;
@@ -390,33 +389,33 @@ CREATE TABLE `sym_extensions_delegates` (
   KEY `extension_id` (`extension_id`),
   KEY `page` (`page`),
   KEY `delegate` (`delegate`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_extensions_delegates` ***
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (1, 1, '/blueprints/events/new/', 'AppendEventFilter', 'appendEventFilter');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (2, 1, '/blueprints/events/edit/', 'AppendEventFilter', 'appendEventFilter');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (3, 1, '/frontend/', 'EventPreSaveFilter', 'eventPreSaveFilter');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (4, 2, '/frontend/', 'FrontendDevKitResolve', 'frontendDevKitResolve');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (5, 2, '/frontend/', 'ManipulateDevKitNavigation', 'manipulateDevKitNavigation');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (6, 3, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (7, 3, '/backend/', 'InitaliseAdminPageHead', 'initaliseAdminPageHead');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (8, 3, '/backend/', 'AppendPageAlert', 'appendAlert');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (9, 4, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (10, 6, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (11, 6, '/system/preferences/', 'Save', '__SavePreferences');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (12, 7, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (13, 7, '/system/preferences/', 'Save', '__SavePreferences');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (14, 7, '/system/preferences/', 'CustomActions', '__toggleMaintenanceMode');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (15, 7, '/backend/', 'AppendPageAlert', '__appendAlert');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (16, 7, '/blueprints/pages/', 'AppendPageContent', '__appendType');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (17, 7, '/frontend/', 'FrontendPrePageResolve', '__checkForMaintenanceMode');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (18, 7, '/frontend/', 'FrontendParamsResolve', '__addParam');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (19, 8, '/frontend/', 'FrontendDevKitResolve', 'frontendDevKitResolve');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (20, 8, '/frontend/', 'ManipulateDevKitNavigation', 'manipulateDevKitNavigation');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (21, 10, '/backend/', 'NavigationPreRender', 'deleteComponentsItem');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (22, 10, '/backend/', 'AdminPagePreGenerate', 'setRedirects');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (23, 11, '/frontend/', 'FrontendOutputPostGenerate', 'parse_html');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (24, 12, '/backend/', 'InitaliseAdminPageHead', 'appendScriptToHead');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (26, 1, '/blueprints/events/edit/', 'AppendEventFilter', 'appendEventFilter');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (25, 1, '/blueprints/events/new/', 'AppendEventFilter', 'appendEventFilter');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (29, 2, '/frontend/', 'ManipulateDevKitNavigation', 'manipulateDevKitNavigation');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (28, 2, '/frontend/', 'FrontendDevKitResolve', 'frontendDevKitResolve');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (31, 3, '/backend/', 'InitaliseAdminPageHead', 'initaliseAdminPageHead');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (30, 3, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (33, 4, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (37, 6, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (43, 7, '/blueprints/pages/', 'AppendPageContent', '__appendType');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (42, 7, '/backend/', 'AppendPageAlert', '__appendAlert');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (41, 7, '/system/preferences/', 'CustomActions', '__toggleMaintenanceMode');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (40, 7, '/system/preferences/', 'Save', '__SavePreferences');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (39, 7, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (48, 8, '/frontend/', 'ManipulateDevKitNavigation', 'manipulateDevKitNavigation');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (47, 8, '/frontend/', 'FrontendDevKitResolve', 'frontendDevKitResolve');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (27, 1, '/frontend/', 'EventPreSaveFilter', 'eventPreSaveFilter');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (34, 11, '/frontend/', 'FrontendOutputPostGenerate', 'parse_html');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (46, 12, '/backend/', 'InitaliseAdminPageHead', 'appendScriptToHead');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (32, 3, '/backend/', 'AppendPageAlert', 'appendAlert');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (35, 11, '/frontend/', 'FrontendPageResolved', 'setRenderTrigger');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (36, 11, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (38, 6, '/system/preferences/', 'Save', '__SavePreferences');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (44, 7, '/frontend/', 'FrontendPrePageResolve', '__checkForMaintenanceMode');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (45, 7, '/frontend/', 'FrontendParamsResolve', '__addParam');
 
 -- *** STRUCTURE: `sym_fields` ***
 DROP TABLE IF EXISTS `sym_fields`;
@@ -465,13 +464,12 @@ CREATE TABLE `sym_fields_checkbox` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `field_id` int(11) unsigned NOT NULL,
   `default_state` enum('on','off') NOT NULL DEFAULT 'on',
-  `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `sym_fields_checkbox` ***
-INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (5, 6, 'off', NULL);
+INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`) VALUES (5, 6, 'off');
 
 -- *** STRUCTURE: `sym_fields_date` ***
 DROP TABLE IF EXISTS `sym_fields_date`;
