@@ -188,10 +188,10 @@ CREATE TABLE `tbl_entries_data_10` (
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `handle` (`handle`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_10` ***
-INSERT INTO `tbl_entries_data_10` (`id`, `entry_id`, `handle`, `value`) VALUES (3, 5, 'welcome', 'Welcome');
+INSERT INTO `tbl_entries_data_10` (`id`, `entry_id`, `handle`, `value`) VALUES (31, 5, 'welcome', 'Welcome');
 INSERT INTO `tbl_entries_data_10` (`id`, `entry_id`, `handle`, `value`) VALUES (4, 6, 'article', 'Article');
 INSERT INTO `tbl_entries_data_10` (`id`, `entry_id`, `handle`, `value`) VALUES (5, 7, 'data-table', 'Data Table');
 INSERT INTO `tbl_entries_data_10` (`id`, `entry_id`, `handle`, `value`) VALUES (19, 8, 'footer', 'Footer');
@@ -225,10 +225,10 @@ CREATE TABLE `tbl_entries_data_11` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   FULLTEXT KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_11` ***
-INSERT INTO `tbl_entries_data_11` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (3, 5, '<p class=\"welcome\">\r\nCollect, test, and experiment with <strong>interface pattern pairings</strong> of <abbr>CSS</abbr> & <abbr>HTML</abbr>. <strong>Pears</strong> is an <a href=\"https://github.com/simplebits/Pears\">open source WordPress theme</a>, enabling people like you to get your own pattern library up and running quickly.\r\n</p>\r\n<ol class=\"steps\">\r\n	<li><a href=\"https://github.com/simplebits/Pears\">Grab the theme at Github</a>.</li>\r\n	<li>Install the theme.</li>\r\n	<li>Create markup & style patterns.</li>\r\n	<li>Learn.</li>\r\n</ol>', NULL);
+INSERT INTO `tbl_entries_data_11` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (31, 5, '<p class=\"welcome\">\r\nCollect, test, and experiment with <strong>interface pattern pairings</strong> of <abbr>CSS</abbr> & <abbr>HTML</abbr>. <strong>Pears</strong> is an <a href=\"https://github.com/simplebits/Pears\">open source WordPress theme</a>, enabling people like you to get your own pattern library up and running quickly. It has been ported to <a href=\"http://getsymphony.com/\">Symphony</a> as <a href=\"https://github.com/bauhouse/sym-pears\">an ensemble</a> that you can easily install.\r\n</p>\r\n<ol class=\"steps\">\r\n	<li><a href=\"https://github.com/bauhouse/sym-pears\">Grab the ensemble at GitHub</a>.</li>\r\n	<li>Install the ensemble.</li>\r\n	<li>Create markup & style patterns.</li>\r\n	<li>Learn.</li>\r\n</ol>', NULL);
 INSERT INTO `tbl_entries_data_11` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (4, 6, '<article>\r\n	<header>\r\n		<h2>The Title Goes Here</h2>	\r\n	</header>\r\n	\r\n	<aside>\r\n		This is aside text lorem ipsum dolor sit amet consectetur adipisicing.\r\n	</aside>\r\n	\r\n	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis <a href=\"#\">nostrud exercitation</a> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href=\"#\">tempor incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>\r\n	<footer>\r\n		Posted August 22, 2011\r\n	</footer>\r\n</article>			\r\n				', NULL);
 INSERT INTO `tbl_entries_data_11` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (5, 7, '<table>\r\n	<tr>\r\n		<th>Type</th>\r\n		<th>Date</th>\r\n		<th>Rating</th>\r\n	</tr>\r\n	<tr>\r\n		<td>Cheddar</td>\r\n		<td>Jan 3, 2012</td>\r\n		<td>★★★</td>\r\n	</tr>\r\n	<tr>\r\n		<td>Havarti</td>\r\n		<td>Jan 12, 2012</td>\r\n		<td>★★★★</td>\r\n	</tr>\r\n	<tr>\r\n		<td>Muenster</td>\r\n		<td>Jan 20, 2012</td>\r\n		<td>★★</td>\r\n	</tr>\r\n	<tr>\r\n		<td>Swiss</td>\r\n		<td>Jan 22, 2012</td>\r\n		<td>★</td>\r\n	</tr>\r\n	<tr>\r\n		<td>Gouda</td>\r\n		<td>Jan 25, 2012</td>\r\n		<td>★★★★★</td>\r\n	</tr>\r\n	<tr>\r\n		<td>Emmentaler</td>\r\n		<td>Jan 27, 2012</td>\r\n		<td>★★★</td>\r\n	</tr>\r\n</table>			\r\n				', NULL);
 INSERT INTO `tbl_entries_data_11` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (19, 8, '<footer role=\"contentinfo\">\r\n	<nav role=\"navigation\">\r\n		<ul>\r\n			<li><a href=\"#\">This is a link</a></li>\r\n			<li><a href=\"#\">Active Link</a></li>\r\n			<li><a href=\"#\">Lorem link</a></li>\r\n			<li><a href=\"#\">Dolor link two</a></li>\r\n			<li><a href=\"#\">Here is a link</a></li>\r\n		</ul>\r\n	</nav>		\r\n	<p>Copyright © 2012 Company Co. All rights reserved.</p>\r\n</footer>			\r\n				', NULL);
@@ -262,10 +262,10 @@ CREATE TABLE `tbl_entries_data_12` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   FULLTEXT KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_12` ***
-INSERT INTO `tbl_entries_data_12` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (3, 5, 'p.welcome,\r\nol.steps {\r\n	font-size: 1.6em;\r\n	line-height: 1.4;\r\n	}\r\np.welcome {\r\n	margin: 0 0 1.4em;\r\n	}\r\np.welcome abbr {\r\n	letter-spacing: 3px;\r\n	}\r\nol.steps li {\r\n	list-style: decimal;\r\n	margin-left: 1.4em;\r\n	}', NULL);
+INSERT INTO `tbl_entries_data_12` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (31, 5, 'p.welcome,\r\nol.steps {\r\n	font-size: 1.6em;\r\n	line-height: 1.4;\r\n	}\r\np.welcome {\r\n	margin: 0 0 1.4em;\r\n	}\r\np.welcome abbr {\r\n	letter-spacing: 3px;\r\n	}\r\nol.steps li {\r\n	list-style: decimal;\r\n	margin-left: 1.4em;\r\n	}', NULL);
 INSERT INTO `tbl_entries_data_12` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (4, 6, 'article {\r\n	margin: 0 0 20px 20%;\r\n	}\r\narticle header h2 {\r\n	margin: 0 0 15px 0;\r\n	font-size: 20px;\r\n	font-weight: normal;\r\n	line-height: 1.3;\r\n	}\r\narticle aside {\r\n	float: left;\r\n	width: 20%;\r\n	margin-left: -25%;\r\n	font-size: 12px;\r\n	line-height: 1.8;\r\n	color: #999;\r\n	}\r\n@media screen and (max-width: 700px) {\r\n	article aside {\r\n		float: none;\r\n		width: auto;\r\n		margin: 0 0 20px 0;\r\n		line-height: 1.5;\r\n		}\r\n	}\r\narticle p {\r\n	margin: 0 0 20px 0;\r\n	font-size: 14px;\r\n	line-height: 1.5;\r\n	color: #666;\r\n	}\r\narticle footer {\r\n	font-size: 14px;\r\n	color: #999;\r\n	}				', NULL);
 INSERT INTO `tbl_entries_data_12` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (5, 7, 'table {\r\n	margin: 0;\r\n	padding: 0;\r\n	}\r\ntable th,\r\ntable td {\r\n	padding: 10px 20px;\r\n	text-align: left;\r\n	border-bottom: 1px solid #ccc;\r\n	}\r\ntable th {\r\n	border-width: 2px;\r\n	}\r\ntable td {\r\n	color: #666;\r\n	}\r\ntable tr:last-child th,\r\ntable tr:last-child td {\r\n	border-bottom: none;\r\n	}\r\ntable tr:nth-child(even) {\r\n	background: #eee;\r\n	}				', NULL);
 INSERT INTO `tbl_entries_data_12` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (19, 8, 'footer[role=\"contentinfo\"] {\r\n	padding: 15px 0 0 0;\r\n	font-size: 14px;\r\n	border-top: 1px solid #ddd;\r\n	}\r\nfooter[role=\"contentinfo\"] nav ul li {\r\n	display: inline;\r\n	margin: 0 10px 0 0;\r\n	padding: 0 10px 0 0;\r\n	font-weight: bold;\r\n	border-right: 1px solid #ccc;\r\n	}\r\nfooter[role=\"contentinfo\"] nav ul li:last-child {\r\n	margin: 0;\r\n	padding: 0;\r\n	border: none;\r\n	}\r\nfooter[role=\"contentinfo\"] p {\r\n	margin: 10px 0;\r\n	}				', NULL);
@@ -315,10 +315,10 @@ CREATE TABLE `tbl_entries_data_4` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `tbl_entries_data_4` ***
-INSERT INTO `tbl_entries_data_4` (`id`, `entry_id`, `relation_id`) VALUES (5, 5, NULL);
+INSERT INTO `tbl_entries_data_4` (`id`, `entry_id`, `relation_id`) VALUES (33, 5, NULL);
 INSERT INTO `tbl_entries_data_4` (`id`, `entry_id`, `relation_id`) VALUES (6, 6, 1);
 INSERT INTO `tbl_entries_data_4` (`id`, `entry_id`, `relation_id`) VALUES (7, 7, 1);
 INSERT INTO `tbl_entries_data_4` (`id`, `entry_id`, `relation_id`) VALUES (21, 8, 1);
@@ -353,10 +353,10 @@ CREATE TABLE `tbl_entries_data_5` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_5` ***
-INSERT INTO `tbl_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (5, 5, '2012-04-20T11:16:00-07:00', 1334945760, 1334945760);
+INSERT INTO `tbl_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (33, 5, '2012-04-20T11:16:00-07:00', 1334945760, 1334945760);
 INSERT INTO `tbl_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (6, 6, '2012-04-20T13:01:00-07:00', 1334952060, 1334952060);
 INSERT INTO `tbl_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (7, 7, '2012-04-20T13:33:00-07:00', 1334953980, 1334953980);
 INSERT INTO `tbl_entries_data_5` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (21, 8, '2012-04-20T13:37:00-07:00', 1334954220, 1334954220);
@@ -389,10 +389,10 @@ CREATE TABLE `tbl_entries_data_6` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_6` ***
-INSERT INTO `tbl_entries_data_6` (`id`, `entry_id`, `value`) VALUES (5, 5, 'no');
+INSERT INTO `tbl_entries_data_6` (`id`, `entry_id`, `value`) VALUES (33, 5, 'no');
 INSERT INTO `tbl_entries_data_6` (`id`, `entry_id`, `value`) VALUES (6, 6, 'yes');
 INSERT INTO `tbl_entries_data_6` (`id`, `entry_id`, `value`) VALUES (7, 7, 'yes');
 INSERT INTO `tbl_entries_data_6` (`id`, `entry_id`, `value`) VALUES (21, 8, 'yes');
@@ -427,10 +427,9 @@ CREATE TABLE `tbl_entries_data_9` (
   KEY `entry_id` (`entry_id`),
   KEY `value` (`value`),
   KEY `order` (`order`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_9` ***
-INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (5, 5, 'yes', 1334951212);
 INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (6, 6, 'no', 1334952129);
 INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (7, 7, 'no', 1334954022);
 INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (10, 10, 'no', 1334954394);
@@ -453,6 +452,7 @@ INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (29
 INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (30, 25, 'no', 1334963768);
 INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (31, 26, 'no', 1334963801);
 INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (32, 27, 'no', 1334963834);
+INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `value`, `order`) VALUES (33, 5, 'yes', 1349620220);
 
 -- *** DATA: `tbl_entries` ***
 INSERT INTO `tbl_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (1, 1, 1, '2012-04-20 10:34:38', '2012-04-20 17:34:38');
