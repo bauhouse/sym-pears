@@ -1,3 +1,9 @@
+# Pears
+
+## A Symphony Ensemble
+
+Find information about this ensemble in the README file of the [workspace branch](https://github.com/bauhouse/sym-pears/tree/workspace#readme).
+
 # Symphony 2 #
 
 - Version: 2.2.5
