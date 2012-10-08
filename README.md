@@ -22,9 +22,27 @@ This ensemble demonstrates my usual process of building an ensemble with the Sym
 
 ### Installing this Symphony Ensemble
 
-Follow the usual instructions for installing Symphony. You'll find these instructions in the README file of the [`master` branch](https://github.com/bauhouse/sym-pears).
+Follow the usual instructions for installing Symphony. You'll find these instructions in the [README file](https://github.com/bauhouse/sym-pears#readme) of the [`master` branch](https://github.com/bauhouse/sym-pears). [More detailed install instructions](http://getsymphony.com/learn/tutorials/view/install-symphony/) can be found on the Symphony site.
 
-Now you have your choice of CMS on which to build your pattern library. You can find more about the original WordPress theme below.
+If you are installing with Git, the difference will be that you don't need to clone the Symphony core files. These files are in the `master` branch of this repository, which is a snapshot of the [Symphony core](https://github.com/symphonycms/symphony-2), slightly modified to accommodate references to the extension submodules that have been added to the core extensions, and the `workspace` submodule, which contains the majority of the project-specific code that makes this ensemble work. The easiest way to grab everything is to use this single command, which will recursively find all submodules, initialize them and checkout the appropriate commit, cloning the files into a directory called `pears`:
+
+	git clone --recursive git://github.com/bauhouse/sym-pears.git pears
+
+Alternatively, just download the ZIP file of the latest release and [install the old fashioned way](https://github.com/bauhouse/sym-pears#via-the-old-fashioned-way-1).
+
+### Change Log
+
+Version 1.1 - 8 October 2012
+
+- Updated the Pears ensemble to Symphony 2.3
+
+Version 1.0 - 7 October 2012
+
+- Ported the Pears project to Symphony 2.2.5
+
+### Enjoy Two Different Flavours of Pears
+
+Now you have your choice of CMS on which to build your pattern library: WordPress or Symphony. You can find more about [the original WordPress theme](https://github.com/simplebits/Pears) below.
 
 ## A WordPress Theme by Dan Cedarholm
 
